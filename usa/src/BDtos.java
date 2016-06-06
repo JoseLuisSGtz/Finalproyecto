@@ -6,11 +6,11 @@ import java.util.ArrayList;
 
 public class BDtos {
 
-    public void agregarUsuario(Salasget user) {
+    public void agregarSalas(Salasget user) {
         CBDPro conn = new CBDPro();
         try {
             Statement consulta = conn.getConnection().createStatement();
-            String sql = "INSERT INTO tablasalas VALUES('" + user.Nsala + "', '" + user.Cantidad+ "', '" + user.Tipodesala+ "','"+ user.Material+"')";
+            String sql = "INSERT INTO tabsalas VALUES('" + user.Nsala + "', '" + user.Cantidad+ "', '" + user.Tipodesala+ "','"+ user.Material+"')";
             consulta.executeUpdate(sql);
             System.out.println("Usuario registrado");
             consulta.close();
@@ -23,7 +23,7 @@ public class BDtos {
     public ArrayList<Salasget> obtenSget() {
         ArrayList<Salasget> Sget = new ArrayList<>();
         CBDPro conn = new CBDPro();
-        String sql = "SELECT * FROM tablasalas";
+        String sql = "SELECT * FROM tabsalas";
         try {
             PreparedStatement st = conn.getConnection().prepareStatement(sql);
             ResultSet rs = st.executeQuery();

@@ -1,6 +1,9 @@
 public class Salasget {
 int Nsala,Cantidad;
 String Tipodesala,Material;
+public Salasget(){
+    
+}
 public Salasget(int Nsala, int Cantidad, String Tipodesala, String Material){
     this.Nsala=Nsala;
     this.Cantidad=Cantidad;
@@ -48,5 +51,5 @@ public Salasget(int Nsala, int Cantidad, String Tipodesala, String Material){
         row[3] = Material;
         return row;
     }
-
 }
+
